@@ -1,0 +1,505 @@
+<mxfile host="app.diagrams.net" agent="claude-code" pages="2">
+  <diagram id="ems-uml" name="EMS Class Diagram">
+    <mxGraphModel dx="7195" dy="3453" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Employee" parent="1" style="swimlane;fontStyle=3;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneFillColor=#ffffff;" value="Employee (abstract)" vertex="1">
+          <mxGeometry height="506" width="280" x="520" y="1490" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_a1" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="# employeeId: int" vertex="1">
+          <mxGeometry height="26" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_a3" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="# age: int" vertex="1">
+          <mxGeometry height="26" width="280" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_a2" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="# fullName: String" vertex="1">
+          <mxGeometry height="26" width="280" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_a4" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="# department: Department" vertex="1">
+          <mxGeometry height="26" width="280" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_a5" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="# position: String" vertex="1">
+          <mxGeometry height="26" width="280" y="134" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_div" parent="Employee" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#d79b00;" value="" vertex="1">
+          <mxGeometry height="8" width="280" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m1" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ Employee(id, name, age, dept, pos)" vertex="1">
+          <mxGeometry height="26" width="280" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m2" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getEmployeeId(): int" vertex="1">
+          <mxGeometry height="26" width="280" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m3" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getFullName(): String" vertex="1">
+          <mxGeometry height="26" width="280" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m4" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ setFullName(name: String): void" vertex="1">
+          <mxGeometry height="26" width="280" y="246" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m5" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getAge(): int" vertex="1">
+          <mxGeometry height="26" width="280" y="272" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m6" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ setAge(age: int): void" vertex="1">
+          <mxGeometry height="26" width="280" y="298" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m7" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getDepartment(): Department" vertex="1">
+          <mxGeometry height="26" width="280" y="324" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m8" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ setDepartment(d: Department): void" vertex="1">
+          <mxGeometry height="26" width="280" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m9" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getPosition(): String" vertex="1">
+          <mxGeometry height="26" width="280" y="376" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m10" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ setPosition(p: String): void" vertex="1">
+          <mxGeometry height="26" width="280" y="402" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m11" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ calculateSalary(): double {abstract}" vertex="1">
+          <mxGeometry height="26" width="280" y="428" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m12" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getEmployeeType(): String {abstract}" vertex="1">
+          <mxGeometry height="26" width="280" y="454" as="geometry" />
+        </mxCell>
+        <mxCell id="Employee_m13" parent="Employee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ toString(): String" vertex="1">
+          <mxGeometry height="26" width="280" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" value="FullTimeEmployee" vertex="1">
+          <mxGeometry height="272" width="260" x="10" y="1670" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee_a1" parent="FullTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- basicSalary: double" vertex="1">
+          <mxGeometry height="26" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee_a2" parent="FullTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- bonus: double" vertex="1">
+          <mxGeometry height="26" width="260" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee_div" parent="FullTimeEmployee" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee_m1" parent="FullTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ FullTimeEmployee(id, name, age, dept, pos, basicSalary, bonus)" vertex="1">
+          <mxGeometry height="26" width="260" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee_m2" parent="FullTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getBasicSalary(): double" vertex="1">
+          <mxGeometry height="26" width="260" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee_m3" parent="FullTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ setBasicSalary(v: double): void" vertex="1">
+          <mxGeometry height="26" width="260" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee_m4" parent="FullTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getBonus(): double" vertex="1">
+          <mxGeometry height="26" width="260" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee_m5" parent="FullTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ setBonus(v: double): void" vertex="1">
+          <mxGeometry height="26" width="260" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee_m6" parent="FullTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ calculateSalary(): double" vertex="1">
+          <mxGeometry height="26" width="260" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="FullTimeEmployee_m7" parent="FullTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getEmployeeType(): String" vertex="1">
+          <mxGeometry height="26" width="260" y="246" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;swimlaneFillColor=#ffffff;" value="PartTimeEmployee" vertex="1">
+          <mxGeometry height="272" width="260" x="1130" y="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee_a1" parent="PartTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- hourlyRate: double" vertex="1">
+          <mxGeometry height="26" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee_a2" parent="PartTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- hoursWorked: double" vertex="1">
+          <mxGeometry height="26" width="260" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee_div" parent="PartTimeEmployee" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee_m1" parent="PartTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ PartTimeEmployee(id, name, age, dept, pos, hourlyRate, hoursWorked)" vertex="1">
+          <mxGeometry height="26" width="260" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee_m2" parent="PartTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getHourlyRate(): double" vertex="1">
+          <mxGeometry height="26" width="260" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee_m3" parent="PartTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ setHourlyRate(v: double): void" vertex="1">
+          <mxGeometry height="26" width="260" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee_m4" parent="PartTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getHoursWorked(): double" vertex="1">
+          <mxGeometry height="26" width="260" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee_m5" parent="PartTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ setHoursWorked(v: double): void" vertex="1">
+          <mxGeometry height="26" width="260" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee_m6" parent="PartTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ calculateSalary(): double" vertex="1">
+          <mxGeometry height="26" width="260" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="PartTimeEmployee_m7" parent="PartTimeEmployee" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getEmployeeType(): String" vertex="1">
+          <mxGeometry height="26" width="260" y="246" as="geometry" />
+        </mxCell>
+        <mxCell id="Department" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;swimlaneFillColor=#ffffff;" value="Department" vertex="1">
+          <mxGeometry height="220" width="240" x="1280" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="Department_a1" parent="Department" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- departmentId: int" vertex="1">
+          <mxGeometry height="46" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Department_a2" parent="Department" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- departmentName: String" vertex="1">
+          <mxGeometry height="26" width="240" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="Department_div" parent="Department" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="8" width="240" y="102" as="geometry" />
+        </mxCell>
+        <mxCell id="Department_m1" parent="Department" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ Department(id: int, name: String)" vertex="1">
+          <mxGeometry height="26" width="240" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Department_m2" parent="Department" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getDepartmentId(): int" vertex="1">
+          <mxGeometry height="26" width="240" y="136" as="geometry" />
+        </mxCell>
+        <mxCell id="Department_m3" parent="Department" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getDepartmentName(): String" vertex="1">
+          <mxGeometry height="26" width="240" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="Department_m4" parent="Department" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ setDepartmentName(name: String): void" vertex="1">
+          <mxGeometry height="26" width="240" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="Department_m5" parent="Department" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ equals(obj: Object): boolean" vertex="1">
+          <mxGeometry height="26" width="240" y="214" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#ffffff;" value="EmployeeManager" vertex="1">
+          <mxGeometry height="350" width="280" x="-50" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_a1" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- employees: List&lt;Employee&gt;" vertex="1">
+          <mxGeometry height="26" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_a2" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- fileHandler: FileHandler" vertex="1">
+          <mxGeometry height="26" width="280" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_div" parent="EmployeeManager" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#9673a6;" value="" vertex="1">
+          <mxGeometry height="8" width="280" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_m1" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ addEmployee(e: Employee): boolean" vertex="1">
+          <mxGeometry height="26" width="280" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_m2" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ updateEmployee(id: int, updated: Employee): boolean" vertex="1">
+          <mxGeometry height="26" width="280" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_m3" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ deleteEmployee(id: int): boolean" vertex="1">
+          <mxGeometry height="26" width="280" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_m4" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ searchById(id: int): Employee" vertex="1">
+          <mxGeometry height="26" width="280" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_m5" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ searchByName(name: String): List&lt;Employee&gt;" vertex="1">
+          <mxGeometry height="26" width="280" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_m6" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ filterByDepartment(dept: String): List&lt;Employee&gt;" vertex="1">
+          <mxGeometry height="26" width="280" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_m7" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getAllEmployees(): List&lt;Employee&gt;" vertex="1">
+          <mxGeometry height="26" width="280" y="246" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_m8" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ isIdUnique(id: int): boolean" vertex="1">
+          <mxGeometry height="26" width="280" y="272" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_m9" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ loadFromFile(): void" vertex="1">
+          <mxGeometry height="26" width="280" y="298" as="geometry" />
+        </mxCell>
+        <mxCell id="EmployeeManager_m10" parent="EmployeeManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ saveToFile(): void" vertex="1">
+          <mxGeometry height="26" width="280" y="324" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#ffffff;" value="DepartmentManager" vertex="1">
+          <mxGeometry height="272" width="280" x="845.44" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager_a1" parent="DepartmentManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- departments: List&lt;Department&gt;" vertex="1">
+          <mxGeometry height="26" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager_a2" parent="DepartmentManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- fileHandler: FileHandler" vertex="1">
+          <mxGeometry height="26" width="280" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager_div" parent="DepartmentManager" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#9673a6;" value="" vertex="1">
+          <mxGeometry height="8" width="280" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager_m1" parent="DepartmentManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ addDepartment(d: Department): boolean" vertex="1">
+          <mxGeometry height="26" width="280" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager_m2" parent="DepartmentManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ deleteDepartment(id: int): boolean" vertex="1">
+          <mxGeometry height="26" width="280" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager_m3" parent="DepartmentManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ getAllDepartments(): List&lt;Department&gt;" vertex="1">
+          <mxGeometry height="26" width="280" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager_m4" parent="DepartmentManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ isIdUnique(id: int): boolean" vertex="1">
+          <mxGeometry height="26" width="280" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager_m5" parent="DepartmentManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ isNameUnique(name: String): boolean" vertex="1">
+          <mxGeometry height="26" width="280" y="194" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager_m6" parent="DepartmentManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ loadFromFile(): void" vertex="1">
+          <mxGeometry height="26" width="280" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManager_m7" parent="DepartmentManager" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ saveToFile(): void" vertex="1">
+          <mxGeometry height="26" width="280" y="246" as="geometry" />
+        </mxCell>
+        <mxCell id="AuthService" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#ffffff;" value="AuthService" vertex="1">
+          <mxGeometry height="116" width="240" x="-480" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="AuthService_a1" parent="AuthService" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- validUsername: String" vertex="1">
+          <mxGeometry height="26" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AuthService_a2" parent="AuthService" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- validPassword: String" vertex="1">
+          <mxGeometry height="26" width="240" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="AuthService_div" parent="AuthService" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#9673a6;" value="" vertex="1">
+          <mxGeometry height="8" width="240" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="AuthService_m1" parent="AuthService" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ validateLogin(user: String, pass: String): boolean" vertex="1">
+          <mxGeometry height="26" width="240" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="FileHandler" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;swimlaneFillColor=#ffffff;" value="FileHandler" vertex="1">
+          <mxGeometry height="230" width="280" x="510" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="FileHandler_a1" parent="FileHandler" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- employeeFilePath: String" vertex="1">
+          <mxGeometry height="56" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="FileHandler_a2" parent="FileHandler" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- departmentFilePath: String" vertex="1">
+          <mxGeometry height="26" width="280" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="FileHandler_div" parent="FileHandler" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#b85450;" value="" vertex="1">
+          <mxGeometry height="8" width="280" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="FileHandler_m1" parent="FileHandler" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ saveEmployees(employees: List&lt;Employee&gt;): void" vertex="1">
+          <mxGeometry height="26" width="280" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="FileHandler_m2" parent="FileHandler" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ loadEmployees(): List&lt;Employee&gt;" vertex="1">
+          <mxGeometry height="26" width="280" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="FileHandler_m3" parent="FileHandler" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ saveDepartments(departments: List&lt;Department&gt;): void" vertex="1">
+          <mxGeometry height="26" width="280" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="FileHandler_m4" parent="FileHandler" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ loadDepartments(): List&lt;Department&gt;" vertex="1">
+          <mxGeometry height="26" width="280" y="198" as="geometry" />
+        </mxCell>
+        <mxCell id="LoginFrame" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;JFrame&amp;gt;&amp;gt; LoginFrame" vertex="1">
+          <mxGeometry height="220" width="240" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LoginFrame_a1" parent="LoginFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- usernameField: JTextField" vertex="1">
+          <mxGeometry height="56" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LoginFrame_a2" parent="LoginFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- passwordField: JPasswordField" vertex="1">
+          <mxGeometry height="26" width="240" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="LoginFrame_a3" parent="LoginFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- authService: AuthService" vertex="1">
+          <mxGeometry height="26" width="240" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="LoginFrame_div" parent="LoginFrame" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#36393d;" value="" vertex="1">
+          <mxGeometry height="8" width="240" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="LoginFrame_m1" parent="LoginFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ onLoginClicked(): void" vertex="1">
+          <mxGeometry height="26" width="240" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="LoginFrame_m2" parent="LoginFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ onExitClicked(): void" vertex="1">
+          <mxGeometry height="48" width="240" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="EtyP94g5JK3UplE8xdvl-2" edge="1" parent="LoginFrame" source="LoginFrame" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="LoginFrame_m2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MainDashboardFrame" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#cce5ff;strokeColor=#36393d;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;JFrame&amp;gt;&amp;gt; MainDashboardFrame" vertex="1">
+          <mxGeometry height="260" width="260" x="360" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MainDashboardFrame_a1" parent="MainDashboardFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- employeeManager: EmployeeManager" vertex="1">
+          <mxGeometry height="46" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MainDashboardFrame_a2" parent="MainDashboardFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- departmentManager: DepartmentManager" vertex="1">
+          <mxGeometry height="26" width="260" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="MainDashboardFrame_div" parent="MainDashboardFrame" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#36393d;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="102" as="geometry" />
+        </mxCell>
+        <mxCell id="MainDashboardFrame_m1" parent="MainDashboardFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ showAddEmployeePanel(): void" vertex="1">
+          <mxGeometry height="26" width="260" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="MainDashboardFrame_m2" parent="MainDashboardFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ showViewEmployeesPanel(): void" vertex="1">
+          <mxGeometry height="26" width="260" y="136" as="geometry" />
+        </mxCell>
+        <mxCell id="MainDashboardFrame_m3" parent="MainDashboardFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ showSearchUpdatePanel(): void" vertex="1">
+          <mxGeometry height="26" width="260" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="MainDashboardFrame_m4" parent="MainDashboardFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ showDepartmentPanel(): void" vertex="1">
+          <mxGeometry height="32" width="260" y="188" as="geometry" />
+        </mxCell>
+        <mxCell id="MainDashboardFrame_m5" parent="MainDashboardFrame" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ logout(): void" vertex="1">
+          <mxGeometry height="26" width="260" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="AddEmployeePanel" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;JPanel&amp;gt;&amp;gt; AddEmployeePanel" vertex="1">
+          <mxGeometry height="168" width="260" x="-280" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="AddEmployeePanel_a1" parent="AddEmployeePanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- employeeManager: EmployeeManager" vertex="1">
+          <mxGeometry height="26" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AddEmployeePanel_a2" parent="AddEmployeePanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- departmentManager: DepartmentManager" vertex="1">
+          <mxGeometry height="26" width="260" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="AddEmployeePanel_div" parent="AddEmployeePanel" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#0e8088;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="AddEmployeePanel_m1" parent="AddEmployeePanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ onAddButtonClicked(): void" vertex="1">
+          <mxGeometry height="26" width="260" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="AddEmployeePanel_m2" parent="AddEmployeePanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ validateInput(): boolean" vertex="1">
+          <mxGeometry height="26" width="260" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="AddEmployeePanel_m3" parent="AddEmployeePanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ toggleSalaryFields(type: String): void" vertex="1">
+          <mxGeometry height="26" width="260" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="ViewEmployeesPanel" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;JPanel&amp;gt;&amp;gt; ViewEmployeesPanel" vertex="1">
+          <mxGeometry height="116" width="260" x="920" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="ViewEmployeesPanel_a1" parent="ViewEmployeesPanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- employeeManager: EmployeeManager" vertex="1">
+          <mxGeometry height="26" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ViewEmployeesPanel_a2" parent="ViewEmployeesPanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- employeeTable: JTable" vertex="1">
+          <mxGeometry height="26" width="260" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="ViewEmployeesPanel_div" parent="ViewEmployeesPanel" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#0e8088;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="ViewEmployeesPanel_m1" parent="ViewEmployeesPanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ refreshTable(): void" vertex="1">
+          <mxGeometry height="26" width="260" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="SearchUpdatePanel" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;JPanel&amp;gt;&amp;gt; SearchUpdatePanel" vertex="1">
+          <mxGeometry height="168" width="260" x="350" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="SearchUpdatePanel_a1" parent="SearchUpdatePanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- employeeManager: EmployeeManager" vertex="1">
+          <mxGeometry height="26" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="SearchUpdatePanel_div" parent="SearchUpdatePanel" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#0e8088;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="56" as="geometry" />
+        </mxCell>
+        <mxCell id="SearchUpdatePanel_m1" parent="SearchUpdatePanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ onSearchClicked(): void" vertex="1">
+          <mxGeometry height="26" width="260" y="64" as="geometry" />
+        </mxCell>
+        <mxCell id="SearchUpdatePanel_m2" parent="SearchUpdatePanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ onUpdateClicked(): void" vertex="1">
+          <mxGeometry height="26" width="260" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="SearchUpdatePanel_m3" parent="SearchUpdatePanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ onDeleteClicked(): void" vertex="1">
+          <mxGeometry height="26" width="260" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="SearchUpdatePanel_m4" parent="SearchUpdatePanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ loadSelectedEmployee(): void" vertex="1">
+          <mxGeometry height="26" width="260" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManagementPanel" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;swimlaneFillColor=#ffffff;" value="&amp;lt;&amp;lt;JPanel&amp;gt;&amp;gt; DepartmentManagementPanel" vertex="1">
+          <mxGeometry height="180" width="280" x="940" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManagementPanel_a1" parent="DepartmentManagementPanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="- departmentManager: DepartmentManager" vertex="1">
+          <mxGeometry height="66" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManagementPanel_div" parent="DepartmentManagementPanel" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;strokeColor=#0e8088;" value="" vertex="1">
+          <mxGeometry height="8" width="280" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManagementPanel_m1" parent="DepartmentManagementPanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ onAddDepartmentClicked(): void" vertex="1">
+          <mxGeometry height="26" width="280" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManagementPanel_m2" parent="DepartmentManagementPanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ onDeleteDepartmentClicked(): void" vertex="1">
+          <mxGeometry height="26" width="280" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="DepartmentManagementPanel_m3" parent="DepartmentManagementPanel" style="text;align=left;verticalAlign=middle;spacingLeft=6;whiteSpace=wrap;html=1;fontSize=11;" value="+ refreshDepartmentList(): void" vertex="1">
+          <mxGeometry height="26" width="280" y="156" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="FullTimeEmployee" style="endArrow=block;endFill=0;endSize=16;html=1;rounded=0;" target="Employee" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="PartTimeEmployee" style="endArrow=block;endFill=0;endSize=16;html=1;rounded=0;" target="Employee" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="Employee" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;" target="Department" value="belongs to  1  *">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" style="endArrow=diamondThin;endFill=0;endSize=18;html=1;rounded=0;" target="Employee" value="">
+          <mxGeometry relative="1" x="1" y="-111" as="geometry">
+            <mxPoint x="-141" y="-36" as="offset" />
+            <mxPoint x="520.3703703703695" y="1540" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="DepartmentManager" style="endArrow=diamondThin;endFill=0;endSize=18;html=1;rounded=0;" target="Department" value="manages  1  *">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="EmployeeManager" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;dashed=1;" target="FileHandler" value="uses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="DepartmentManager" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;dashed=1;" value="uses">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="839.9993869731802" y="740.0000000000005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="FileHandler" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;dashed=1;" target="Employee" value="reads/writes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="FileHandler" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;dashed=1;" target="Department" value="reads/writes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="LoginFrame" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;dashed=1;" target="AuthService" value="validates via">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="LoginFrame" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;dashed=1;" target="MainDashboardFrame" value="opens on success">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="MainDashboardFrame" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;" target="EmployeeManager" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="MainDashboardFrame" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;" target="DepartmentManager" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="MainDashboardFrame" style="endArrow=diamondThin;endFill=1;endSize=18;html=1;rounded=0;" target="AddEmployeePanel" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="MainDashboardFrame" style="endArrow=diamondThin;endFill=1;endSize=18;html=1;rounded=0;" target="ViewEmployeesPanel" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="MainDashboardFrame" style="endArrow=diamondThin;endFill=1;endSize=18;html=1;rounded=0;" target="SearchUpdatePanel" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="MainDashboardFrame" style="endArrow=diamondThin;endFill=1;endSize=18;html=1;rounded=0;" target="DepartmentManagementPanel" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="AddEmployeePanel" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;" target="EmployeeManager" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="AddEmployeePanel" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;" target="DepartmentManager" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="ViewEmployeesPanel" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;" target="EmployeeManager" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="SearchUpdatePanel" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;" target="EmployeeManager" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="DepartmentManagementPanel" style="endArrow=open;endFill=0;endSize=12;html=1;rounded=0;" target="DepartmentManager" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_q9iLDGdh9li1VOhOk4h-1" edge="1" parent="1" source="EmployeeManager_m10" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;defaultLabelBackgroundColor=page;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" target="Employee_a1" value="manages 1*&amp;nbsp;">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="370" y="1200" as="sourcePoint" />
+            <mxPoint x="530" y="1200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_q9iLDGdh9li1VOhOk4h-2" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;rounded=0;defaultLabelBackgroundColor=page;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-830" y="640" as="sourcePoint" />
+            <mxPoint x="1560" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_q9iLDGdh9li1VOhOk4h-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 34px;&quot;&gt;kol ma foo2 haza el khat fa howa UI&lt;/font&gt;" vertex="1">
+          <mxGeometry height="250" width="340" x="1350" y="390" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="3ghiEPkl2236t9dFpRrl" name="Page-2">
+    <mxGraphModel dx="1261" dy="656" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
