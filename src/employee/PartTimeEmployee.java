@@ -3,12 +3,12 @@ package employee;
 
 import department.Department;
 
-class  partTimeEmployee extends Employee
+public class  PartTimeEmployee extends Employee
 {
     private double hourlyrate;
     private double hoursworked;
 
-    public partTimeEmployee(int id, String name, int age, Department dept,
+    public PartTimeEmployee(int id, String name, int age, Department dept,
                             String pos, double hourlyRate, double hoursWorked)
     {
         super(id,name,age,dept,pos);

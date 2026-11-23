@@ -3,7 +3,7 @@ package managers;
 import java.util.List;
 import java.util.ArrayList;
 import department.Department;
-import file.FileHandler;
+import managers.FileHandler;
 
 public class DepartmentManager
 {
@@ -19,6 +19,7 @@ public class DepartmentManager
     }
 
     public void loadFromFile() {
+        
         departments = fileHandler.loadDepartments();
 
         if (departments == null) {

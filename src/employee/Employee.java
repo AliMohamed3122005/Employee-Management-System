@@ -1,5 +1,6 @@
 package employee;
 import department.Department;
+import managers.EmployeeManager;
 public abstract class Employee{
     protected int employeeID;
     protected int age;
@@ -7,8 +8,10 @@ public abstract class Employee{
     protected Department department;
     protected String postion;
 
+    EmployeeManager E = new EmployeeManager();
+    
     public Employee( int id, String name, int age, Department dept, String pos )
-    {   if (id == null ||!isIdUnique(id))throw new IllegalArgumentException("the id already exists or the id is not given");
+    {   if (id<=0 ||!E.isIdUnique(id))throw new IllegalArgumentException("the id already exists or the id is not given");
         this.employeeID=id;
         if (name==null)   throw new IllegalArgumentException("there must be a name");
         this.fullname=name;
@@ -38,8 +41,7 @@ public abstract class Employee{
     {   if (age<18) throw new IllegalArgumentException("the employee age can't be lower than 18");
         this.age=age;
     }
-    public void setDepartment(Department dept){
-        if (dept==null) throw new IllegalArgumentException("the department can't be null");
+    public void setDepartment(Department dept){ 
         this.department=dept;
     }
     public void setPostion(String postion)

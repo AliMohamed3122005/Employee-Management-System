@@ -37,7 +37,7 @@ public class FileHandler
         {
             try(BufferedWriter writer = new BufferedWriter(new FileWriter(employeeFilePath)))
             {
-                writer.write("Type,Employee ID,age,Full Name,Department Name,Position,Salary Details");
+                writer.write("Type,Employee ID,age,Full Name,Department ID,Position,Salary Details");
                 writer.newLine();
                 for(Employee E : employees)
                 {
@@ -48,7 +48,8 @@ public class FileHandler
                         writer.write(F.getEmployeeID() + ",");
                         writer.write(F.getAge() + ",");
                         writer.write(F.getFullname() + ",");
-                        writer.write(F.getDepartment().getdepartmentName() + ",");
+                        String departmentID = (E.getDepartment() == null) ? "" : E.getDepartment().getDepartmentId();
+                        writer.write(departmentID + ",");
                         writer.write(F.getPostion() + ",");
                         writer.write(F.getSalary()  + "|" + F.getBounus());
                         writer.newLine();
@@ -60,7 +61,8 @@ public class FileHandler
                         writer.write(F.getEmployeeID() + ",");
                         writer.write(F.getAge() + ",");
                         writer.write(F.getFullname() + ",");
-                        writer.write(F.getDepartment().getdepartmentName() + ",");
+                        String departmentId = (E.getDepartment() == null) ? "" : E.getDepartment().getDepartmentId();
+                        writer.write(departmentId + ",");
                         writer.write(F.getPostion() + ",");
                         writer.write(F.getHourlyRate() + "|" + F.getHoursWorked());
                         writer.newLine();
@@ -69,7 +71,7 @@ public class FileHandler
             }
             catch(IOException e)
             {
-                System.out.println("Error Cannot Saving File" + e.getMessage());
+                throw new RuntimeException("Failed to save employees", e);
             }
         }
     }   
@@ -85,12 +87,14 @@ public class FileHandler
                 reader.readLine(); // Header
                 List<Employee> employees = new ArrayList<>();
                 String line;
-                List <Department> departments = loadDeparments();
+                List <Department> departments = loadDepartments();
                 while((line = reader.readLine()) != null) 
                 {   
                     if(line.isBlank())
                     {continue;}
-                    String []data = line.split(",");
+                    String []data = line.split(",",-1);
+                    if(data.length != 7)
+                        continue;
                     if(data[0].equals("Full-Time"))
                     {   
                         int employeeID;
@@ -100,64 +104,77 @@ public class FileHandler
                         try{age = Integer.parseInt(data[2]);}
                         catch(NumberFormatException e){continue;}
                         String fullName = data[3].trim();
-                        String departmentName = data[4].trim();
+                        String departmentID = data[4].trim();
                         Department employeeDepartment = null;
                         for(Department dept : departments)
                         {   
-                            if(dept.getdepartmentName().equalsIgnoreCase(departmentName))
+                            if(dept.getDepartmentId().equals(departmentID))
                             {
                                 employeeDepartment = dept;
                                 break;
                             }
                         }
                         String position = data[5].trim();
-                        String []dataSalary = data[6].split("\\|");
+                        String []dataSalary = data[6].split("\\|",-1);
                         if(dataSalary.length != 2)
                             continue;
-                        double salary = Double.parseDouble(dataSalary[0]);
-                        double bonus = Double.parseDouble(dataSalary[1]);
-                        if(employeeDepartment != null)
+                        double salary;
+                        try
                         {
-                            FullTimeEmployee E = new FullTimeEmployee(employeeID, fullName, age, employeeDepartment, position, salary, bonus);
-                            employees.add(E);
-                        }
-                        else 
+                            salary = Double.parseDouble(dataSalary[0]);
+                        }   
+                        catch(NumberFormatException | ArrayIndexOutOfBoundsException e)
+                        {continue;}
+                        double bonus;
+                        try
                         {
-                            System.out.println("Cannot Load Emplyee Without Department");
-                        }
+                            bonus = Double.parseDouble(dataSalary[1]);
+                        }   
+                        catch(NumberFormatException | ArrayIndexOutOfBoundsException e)
+                        {continue;}
+                        
+                        FullTimeEmployee E = new FullTimeEmployee(employeeID, fullName, age, employeeDepartment, position, salary, bonus);
+                        employees.add(E);
+                        
                     }
 
 
                     else if(data[0].equals("Part-Time"))
-                    {
-                        int employeeID = Integer.parseInt(data[1]);
-                        int age = Integer.parseInt(data[2]);
+                    {   
+                        int employeeID; 
+                        try{employeeID = Integer.parseInt(data[1]);}
+                        catch(NumberFormatException | ArrayIndexOutOfBoundsException e)
+                        {continue;}
+                        int age;
+                        try{age = Integer.parseInt(data[2]);}
+                        catch(NumberFormatException | ArrayIndexOutOfBoundsException e)
+                        {continue;}
                         String fullName = data[3].trim();
-                        String departmentName = data[4].trim();
+                        String departmentID = data[4].trim();
                         Department employeeDepartment = null;
                         for(Department dept : departments)
                         {
-                            if(dept.getdepartmentName().equalsIgnoreCase(departmentName))
+                            if(dept.getDepartmentId().equals(departmentID))
                             {
                                 employeeDepartment = dept;
                                 break;
                             }
                         }
                         String position = data[5].trim();
-                        String []dataSalary = data[6].split("\\|");
+                        String []dataSalary = data[6].split("\\|",-1);
                         if(dataSalary.length != 2)
                             continue;
-                        double hourlyRate = Double.parseDouble(dataSalary[0]);
-                        double hoursWorked = Double.parseDouble(dataSalary[1]);
-                        if(employeeDepartment != null)
-                        {
-                            PartTimeEmployee E = new PartTimeEmployee(employeeID, fullName, age, employeeDepartment, position, hourlyRate, hoursWorked);
-                            employees.add(E);
-                        }
-                        else 
-                        {
-                            System.out.println("Cannot Load Emplyee Without Department");
-                        }
+                        double hourlyRate;
+                        try{hourlyRate = Double.parseDouble(dataSalary[0]);}
+                        catch(NumberFormatException | ArrayIndexOutOfBoundsException e1)
+                        {continue;}
+                        double hoursWorked;
+                        try{hoursWorked = Double.parseDouble(dataSalary[1]);}
+                        catch(NumberFormatException | ArrayIndexOutOfBoundsException e1)
+                        {continue;}
+                        
+                        PartTimeEmployee E = new PartTimeEmployee(employeeID, fullName, age, employeeDepartment, position, hourlyRate, hoursWorked);
+                        employees.add(E);
                     }
                     else continue;
 
@@ -167,8 +184,7 @@ public class FileHandler
             }
             catch(IOException e)
             {
-                System.out.println("Error Cannot Open File" + e.getMessage());
-                return new ArrayList<>();
+                throw new RuntimeException("Failed to load employees", e);
             }
         }
     }
@@ -185,19 +201,19 @@ public class FileHandler
                 writer.newLine();
                 for(Department D : departments)
                 {
-                    writer.write(D.getdepartmentName() + ",");
+                    writer.write(D.getDepartmentName() + ",");
                     writer.write(D.getDepartmentId() + "");
                     writer.newLine();
                 }
             }
             catch(IOException e)
             {
-                System.out.println("Error Cannot Saving File" + e.getMessage());
+                throw new RuntimeException("Failed to save departments", e);
             }
         }
     }
 
-    protected List<Department> loadDeparments()
+    protected List<Department> loadDepartments()
     {   
         File file = new File(departmentFilePath);
         if(! file.exists())
@@ -220,12 +236,9 @@ public class FileHandler
                     String departmentName = data[0].trim();
                     if(departmentName.isEmpty())
                         continue;
-                    int departmentId ;
-                    try{departmentId = Integer.parseInt(data[1].trim());}
-                    catch(NumberFormatException e){continue;}
-
-                    if(departmentId <= 0)
-                        continue;
+                    
+                    String departmentId = (data[1].trim());
+                    
                     Department D = new Department(departmentName,departmentId);
                     departments.add(D);
                 }
@@ -233,8 +246,7 @@ public class FileHandler
             }
             catch(IOException e)
             {
-                System.out.println("Error Cannot Open File" + e.getMessage());
-                return new ArrayList<>();
+                throw new RuntimeException("Failed to load departments", e);
             }
         }
     }

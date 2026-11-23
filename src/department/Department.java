@@ -5,7 +5,7 @@ public class Department
     private String departmentId;
     private String departmentName;
 
-    public Department(String departmentId, String departmentName) {
+    public Department(String departmentName, String departmentId) {
         setDepartmentId(departmentId);
         setDepartmentName(departmentName);
     }

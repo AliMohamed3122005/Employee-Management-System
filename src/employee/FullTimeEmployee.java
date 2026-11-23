@@ -2,7 +2,7 @@ package employee;
 
 import department.Department;
 
-class FullTimeEmployee extends Employee
+public class FullTimeEmployee extends Employee
 {
     private double salary;
     private double Bounus;
