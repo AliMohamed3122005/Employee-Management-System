@@ -1,4 +1,4 @@
-package AdminGUI;
+package gui;
 
 import javax.swing.JFrame;
 import managers.EmployeeManager;

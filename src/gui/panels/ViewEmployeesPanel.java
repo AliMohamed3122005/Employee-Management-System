@@ -1,4 +1,4 @@
-package AdminGUI;
+package gui.panels;
 
 import javax.swing.JPanel;
 import javax.swing.JTable;
