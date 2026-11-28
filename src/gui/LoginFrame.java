@@ -2,6 +2,8 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import gui.panels.DepartmentManagementPanel.IconType;
+import gui.panels.DepartmentManagementPanel.VectorIcon;
 import managers.DepartmentManager;
 import managers.EmployeeManager;
 
@@ -13,6 +15,7 @@ class LoginFrame extends JFrame
     LoginFrame()
     {
         super("Employee Management System");
+        Theme.setWindowIcon(this);
 
         usernameField = new JTextField();
         passwordField = new JPasswordField();
@@ -49,7 +52,7 @@ class LoginFrame extends JFrame
         column.setOpaque(false);
         column.setLayout(new BoxLayout(column, BoxLayout.Y_AXIS));
 
-        JLabel logoLabel = new JLabel(new PeopleIcon(100, Theme.FOREST_GREEN));
+        JLabel logoLabel = new JLabel(new VectorIcon(IconType.GROUP, 100, Theme.FOREST_GREEN));
         logoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         column.add(logoLabel);
         column.add(Box.createVerticalStrut(10));
@@ -148,8 +151,8 @@ class LoginFrame extends JFrame
         }
 
         EmployeeManager employeeManager = new EmployeeManager();
+        employeeManager.loadFromFile();
         DepartmentManager departmentManager = new DepartmentManager();
-        // check whether these constructors already load the CSV files; if not, call loadFromFile() here
 
         dispose();                                                         // close the login window
         new MainDashboardFrame(employeeManager, departmentManager).setVisible(true);

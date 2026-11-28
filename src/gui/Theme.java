@@ -40,6 +40,22 @@ final class Theme
         return new ImageIcon(scaled);
     }
 
+    static void setWindowIcon(JFrame frame)
+    {
+        java.net.URL resource = Theme.class.getResource("/gui/assets/window-icon.png");
+        if (resource != null)
+        {
+            frame.setIconImage(new ImageIcon(resource).getImage());
+            return;
+        }
+
+        File file = new File("src/gui/assets/window-icon.png");
+        if (file.exists())
+        {
+            frame.setIconImage(new ImageIcon(file.getPath()).getImage());
+        }
+    }
+
     // ---- a flat button that paints its own background, so no Look and Feel can turn it gray ----
     static JButton button(String text, Color background, Color foreground, Color border, Icon icon)
     {
@@ -95,9 +111,13 @@ final class Theme
     // ---- title row + separator, reused by every screen ----
     static JPanel header(String title, String iconFile)
     {
+        return header(title, icon(iconFile, 39));
+    }
+
+    static JPanel header(String title, Icon icon)
+    {
         JPanel row = new JPanel(new FlowLayout(FlowLayout.LEFT, 16, 0));
         row.setOpaque(false);
-        ImageIcon icon = icon(iconFile, 39);
         if (icon != null)
         {
             row.add(new JLabel(icon));

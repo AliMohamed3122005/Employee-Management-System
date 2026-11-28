@@ -2,6 +2,10 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import gui.panels.DepartmentManagementPanel;
+import gui.panels.AddEmployeePanel;
+import gui.panels.SearchUpdatePanel;
+import gui.panels.ViewEmployeesPanel;
 import managers.DepartmentManager;
 import managers.EmployeeManager;
 
@@ -23,6 +27,7 @@ class MainDashboardFrame extends JFrame
     MainDashboardFrame(EmployeeManager employeeManager, DepartmentManager departmentManager)
     {
         super("Employee Management System");
+        Theme.setWindowIcon(this);
         this.employeeManager = employeeManager;
         this.departmentManager = departmentManager;
 
@@ -46,7 +51,8 @@ class MainDashboardFrame extends JFrame
         side.setPreferredSize(new Dimension(250, 0));
         side.setBorder(BorderFactory.createEmptyBorder(22, 18, 18, 18));
 
-        JLabel logoLabel = new JLabel(new PeopleIcon(48, Color.WHITE));
+        JLabel logoLabel = new JLabel(new DepartmentManagementPanel.VectorIcon(
+                DepartmentManagementPanel.IconType.GROUP, 48, Color.WHITE));
         logoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         side.add(logoLabel);
         side.add(Box.createVerticalStrut(5));
@@ -59,11 +65,12 @@ class MainDashboardFrame extends JFrame
         side.add(name);
         side.add(Box.createVerticalStrut(22));
 
-        NavButton dashboard = addNav(side, "Dashboard",      "home",   DASHBOARD);
-        addNav(side, "View Employees", "people", VIEW);
-        addNav(side, "Add Employee",   "add",    ADD);
-        addNav(side, "Search / Update","search", SEARCH);
-        addNav(side, "Departments",    "domain", DEPARTMENTS);
+        NavButton dashboard = addNav(side, "Dashboard",
+                DepartmentManagementPanel.IconType.DASHBOARD, DASHBOARD);
+        addNav(side, "View Employees", DepartmentManagementPanel.IconType.PEOPLE, VIEW);
+        addNav(side, "Add Employee", DepartmentManagementPanel.IconType.ADD_PERSON, ADD);
+        addNav(side, "Search / Update", DepartmentManagementPanel.IconType.SEARCH, SEARCH);
+        addNav(side, "Departments", DepartmentManagementPanel.IconType.BUILDING, DEPARTMENTS);
         dashboard.setSelected(true);
 
         side.add(Box.createVerticalStrut(24));
@@ -75,7 +82,7 @@ class MainDashboardFrame extends JFrame
         side.add(divider);
         side.add(Box.createVerticalStrut(15));
 
-        NavButton logout = new NavButton("Logout", "logout");
+        NavButton logout = new NavButton("Logout", DepartmentManagementPanel.IconType.LOGOUT);
         logout.addActionListener(e -> {
             logout.setSelected(false);              // Logout never stays highlighted
             confirmLogout();
@@ -86,13 +93,14 @@ class MainDashboardFrame extends JFrame
         return side;
     }
 
-    private NavButton addNav(JPanel side, String text, String iconName, String cardName)
+    private NavButton addNav(JPanel side, String text,
+                             DepartmentManagementPanel.IconType iconType, String cardName)
     {
         if (navGroup.getButtonCount() > 0)
         {
             side.add(Box.createVerticalStrut(5));   // 5 px BETWEEN items, none after the last
         }
-        NavButton button = new NavButton(text, iconName);
+        NavButton button = new NavButton(text, iconType);
         button.addActionListener(e -> cards.show(content, cardName));
         navGroup.add(button);                       // only one selected at a time
         side.add(button);
@@ -119,12 +127,10 @@ class MainDashboardFrame extends JFrame
 
         content.add(buildWelcomePanel(), DASHBOARD);
 
-        // placeholders until teammates' panels are public and accept the managers:
-        // content.add(new ViewEmployeesPanel(employeeManager), VIEW);
-        content.add(placeholder("View Employees"), VIEW);
-        content.add(placeholder("Add Employee"), ADD);
-        content.add(placeholder("Search / Update Employee"), SEARCH);
-        content.add(placeholder("Department Management"), DEPARTMENTS);
+        content.add(new ViewEmployeesPanel(employeeManager), VIEW);
+        content.add(new AddEmployeePanel(employeeManager, departmentManager), ADD);
+        content.add(new SearchUpdatePanel(employeeManager, departmentManager), SEARCH);
+        content.add(new DepartmentManagementPanel(departmentManager, false), DEPARTMENTS);
 
 
         cards.show(content, DASHBOARD);
@@ -143,7 +149,9 @@ class MainDashboardFrame extends JFrame
     {
         JPanel page = new JPanel(new BorderLayout());
         page.setOpaque(false);
-        page.add(Theme.header("Dashboard", "home-green.png"), BorderLayout.NORTH);
+        page.add(Theme.header("Dashboard", new DepartmentManagementPanel.VectorIcon(
+                DepartmentManagementPanel.IconType.DASHBOARD, 39, Theme.TITLE_GREEN)),
+                BorderLayout.NORTH);
 
         JPanel card = new JPanel(new GridBagLayout());
         card.setBackground(Color.WHITE);
@@ -160,7 +168,8 @@ class MainDashboardFrame extends JFrame
         column.setOpaque(false);
         column.setLayout(new BoxLayout(column, BoxLayout.Y_AXIS));
 
-        JLabel welcomeLogo = new JLabel(new PeopleIcon(110, Theme.FOREST_GREEN));
+        JLabel welcomeLogo = new JLabel(new DepartmentManagementPanel.VectorIcon(
+                DepartmentManagementPanel.IconType.GROUP, 110, Theme.FOREST_GREEN));
         welcomeLogo.setAlignmentX(Component.CENTER_ALIGNMENT);
         column.add(welcomeLogo);
         column.add(Box.createVerticalStrut(16));
@@ -176,12 +185,12 @@ class MainDashboardFrame extends JFrame
 
     private static class NavButton extends JToggleButton
     {
-        private final String iconName;
+        private final DepartmentManagementPanel.IconType iconType;
 
-        NavButton(String text, String iconName)
+        NavButton(String text, DepartmentManagementPanel.IconType iconType)
         {
             super(text);
-            this.iconName = iconName;
+            this.iconType = iconType;
             setFont(Theme.bold(14));
             setHorizontalAlignment(SwingConstants.LEFT);
             setIconTextGap(12);
@@ -201,7 +210,8 @@ class MainDashboardFrame extends JFrame
         {
             boolean on = isSelected();
             setForeground(on ? Theme.DARK_GREEN : Color.WHITE);
-            setIcon(Theme.icon(iconName + (on ? "-green.png" : "-white.png"), 22));
+            setIcon(new DepartmentManagementPanel.VectorIcon(iconType, 22,
+                    on ? Theme.DARK_GREEN : Color.WHITE));
         }
 
         @Override
