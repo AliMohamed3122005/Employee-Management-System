@@ -42,7 +42,7 @@ class PeopleIcon implements Icon
 
     // one person = a circle (head) + the top half of an ellipse (shoulders)
     private static Area person(double centreX, double headY, double headRadius,
-                               double bodyWidth, double bodyTop, double bodyHeight)
+                            double bodyWidth, double bodyTop, double bodyHeight)
     {
         Area person = new Area(new Ellipse2D.Double(
                 centreX - headRadius, headY - headRadius, headRadius * 2, headRadius * 2));

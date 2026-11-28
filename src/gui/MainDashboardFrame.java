@@ -5,7 +5,7 @@ import java.awt.*;
 import gui.panels.DepartmentManagementPanel;
 import gui.panels.AddEmployeePanel;
 import gui.panels.SearchUpdatePanel;
-import gui.panels.ViewEmployeesPanel;
+import gui.panels.ViewEmployeePanel;
 import managers.DepartmentManager;
 import managers.EmployeeManager;
 
@@ -94,7 +94,7 @@ class MainDashboardFrame extends JFrame
     }
 
     private NavButton addNav(JPanel side, String text,
-                             DepartmentManagementPanel.IconType iconType, String cardName)
+                            DepartmentManagementPanel.IconType iconType, String cardName)
     {
         if (navGroup.getButtonCount() > 0)
         {
@@ -127,7 +127,7 @@ class MainDashboardFrame extends JFrame
 
         content.add(buildWelcomePanel(), DASHBOARD);
 
-        content.add(new ViewEmployeesPanel(employeeManager), VIEW);
+        content.add(new ViewEmployeePanel(employeeManager), VIEW);
         content.add(new AddEmployeePanel(employeeManager, departmentManager), ADD);
         content.add(new SearchUpdatePanel(employeeManager, departmentManager), SEARCH);
         content.add(new DepartmentManagementPanel(departmentManager, false), DEPARTMENTS);
